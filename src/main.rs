@@ -1,6 +1,14 @@
+use std::time::{Instant};
+
 fn main() {
-    let nth_number = get_nth_fibonacci_number(186);
-    println!("{}", nth_number);
+    let n = 186;
+    let now = Instant::now();
+    let nth_number = get_nth_fibonacci_number(n);
+    let elapsed_time = now.elapsed();
+    println!(
+        "\nThe {}th fibonacci number is {}.
+        This calculation took {} microseconds.", 
+        n, nth_number, elapsed_time.as_micros());
 }
 
 // This method supports {0 < n <= 186} 
